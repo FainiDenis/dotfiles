@@ -1,0 +1,46 @@
+#!/bin/bash
+
+echo "Setting up test project..."
+
+REPOSITORY=$1
+DIRECTORY="$2"
+
+# Ensure we're in the Projects directory
+if [[ $PWD != "$HOME/Documents/Projects" ]]; then
+    echo "You can only setup projects in the $HOME/Documents/Projects directory."
+    echo "Current directory: $PWD"
+    echo "Please cd to $HOME/Documents/Projects first."
+    exit 1
+fi
+
+if [ -z "$REPOSITORY" ] || [ -z "$DIRECTORY" ]; then
+    echo "Usage: setup <repository_url> <directory_name>"
+    echo "Example: setup https://github.com/user/repo.git my-project"
+    exit 1
+fi
+
+# Check if directory already exists
+if [ -d "$DIRECTORY" ]; then
+    echo "Directory '$DIRECTORY' already exists."
+    read -p "Do you want to remove it and continue? (y/N): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        rm -rf "$DIRECTORY"
+    else
+        echo "Setup cancelled."
+        exit 1
+    fi
+fi
+
+echo "Cloning $REPOSITORY into $DIRECTORY..."
+git clone "$REPOSITORY" "$DIRECTORY"
+
+if [ $? -eq 0 ]; then
+    cd "$DIRECTORY" || exit 1
+    echo "Opening project in VS Code..."
+    code .
+    echo "Project setup complete!"
+else
+    echo "Failed to clone repository."
+    exit 1
+fi
