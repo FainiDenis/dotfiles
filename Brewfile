@@ -46,14 +46,13 @@ cask "visual-studio-code"   # Code editor for developers, with support for debug
 cask "vlc"              # Open-source multimedia player that supports a wide range of audio and video formats, as well as streaming protocols
 cask "windows-app"      # Windows app for macOS, allowing users to run Windows applications on their Mac using virtualization technology
 cask "zoom"             # Video conferencing and online meeting platform, allowing users to host and join virtual meetings, webinars, and video calls
-cask 'codex'            # AI-powered code generation tool that helps developers write code faster and more efficiently
 cask 'zed'              # Code editor for developers, with a focus on speed and performance, and support for multiple programming languages
 
 mas "Amperfy", id: 1530145038
 mas "Apple Configurator", id: 1037126344
 mas "Shazam", id: 897118787
 mas "TestFlight", id: 899247664
-mas "Xcode", id: 497799835
+# mas "Xcode", id: 497799835
 
 vscode "4ops.terraform"                         # Terraform language support, including syntax highlighting, code completion, and linting
 vscode "aaron-bond.better-comments"             # Improving code readability by adding color-coded comments
