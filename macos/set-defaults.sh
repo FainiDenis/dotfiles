@@ -4,43 +4,98 @@
 #
 # The original idea (and a couple settings) were grabbed from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+#   https://macos-defaults.com/
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
-# Disable press-and-hold for keys in favor of key repeat.
-defaults write -g ApplePressAndHoldEnabled -bool false
+######################## Dock #######################
 
-# Use AirDrop over every interface. srsly this should be a default.
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+# Dock icon size
+defaults write com.apple.dock tilesize -int 30
 
-# Always open everything in Finder's list view. This is important.
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv
+# Autohide Dock
+defaults write com.apple.dock autohide -bool true
 
-# Show the ~/Library folder.
-chflags nohidden ~/Library
+# Dock show/hide animation speed
+defaults write com.apple.dock autohide-time-modifier -float 2.0
 
-# Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 1
+# Do not show recent apps
+defaults write com.apple.dock show-recents -bool false
 
-# Set the Finder prefs for showing a few different volumes on the Desktop.
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
-
-# Run the screensaver if we're in the bottom-left hot corner.
+# Bottom-left hot corner → screensaver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Hide Safari's bookmark bar.
-defaults write com.apple.Safari.plist ShowFavoritesBar -bool false
+######################## Finder ########################
+#
+# Show all file extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Always show Safari's "URL display" tab in the lower left on mouseover. Strangely
-# like, everyone and their LLMs on the internet thinks this is ShowStatusBar, but
-# it's not.
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Keep folders on top (Finder + Desktop)
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder _FXSortFoldersFirstOnDesktop -bool true
+
+# Search current folder
+defaults write com.apple.finder FXDefaultSearchScope -string 'SCcf'
+
+# Auto-adjust column widths in column view
+defaults write com.apple.finder _FXEnableColumnAutoSizing -bool true
+
+# Always use list view
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Disable file extension change warning
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Auto-delete trash items after 30 days
+defaults write com.apple.finder FXRemoveOldTrashItems -bool true
+
+# Show title bar icons
+defaults write com.apple.universalaccess showWindowTitlebarIcons -bool true
+
+# Disable .DS_Store on network drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Show ~/Library
+chflags nohidden ~/Library
+
+######################## Safari ########################
+#
+# Show full URL in address bar
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+
+# Hide bookmarks bar
+defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+# Show URL overlay on hover
 defaults write com.apple.Safari ShowOverlayStatusBar -bool true
 
-# Set up Safari for development.
-defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool true
-defaults write com.apple.Safari.plist IncludeDevelopMenu -bool true
-defaults write com.apple.Safari.plist WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari.plist "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+################ Input & Interaction ##########
+
+# Disable press-and-hold for keys
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Fast key repeat
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+# Mouse & trackpad speed
+defaults write -g com.apple.mouse.scaling -float 3.0
+defaults write -g com.apple.trackpad.scaling -float 3.0
+
+################ Networking ###################
+
+# Enable AirDrop on all interfaces
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+################ Restart Apps #################
+
+killall Dock Finder Safari 2>/dev/null
