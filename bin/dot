@@ -16,15 +16,21 @@ displayUsageAndExit() {
 	echo "Usage: dot [options]"
 	echo ""
 	echo "Options:"
+	echo "      --configure-smb   Force SMB credential prompt for auto-connect"
 	echo "  -e, --edit    Open dotfiles directory for editing"
 	echo "  -h, --help    Show this help message and exit"
 	exit
 }
 
+FORCE_SMB_PROMPT=0
+
 while test $# -gt 0; do
 	case "$1" in
 		"-h"|"--help")
 			displayUsageAndExit
+			;;
+		"--configure-smb")
+			FORCE_SMB_PROMPT=1
 			;;
 		"-e"|"--edit")
 			exec "$EDITOR" "$dotfilesDirectory"
@@ -39,6 +45,7 @@ while test $# -gt 0; do
 done
 
 export ZSH=$HOME/.dotfiles
+export FORCE_SMB_PROMPT
 
 # Update dotfiles themselves
 echo "› git pull"
