@@ -13,9 +13,11 @@ brew 'ffmpeg'           # Multimedia framework for handling audio and video file
 brew 'gh'               # GitHub CLI tool for managing repositories and issues from the command line
 brew 'git'              # Git version control system
 brew 'grep'             # GNU grep with support for Perl-compatible regular expressions
-brew 'htop'             # Interactive process viewer for Unix systems
+# brew 'htop'             # Interactive process viewer for Unix systems
+brew 'bpytop'           # Resource monitoring (better htop)
 brew 'mas'              # Mac App Store manager
-brew 'tree'             # Visualize directory structure in terminal
+# brew 'tree'             # Visualize directory structure in terminal
+brew 'tre'              # Directory hierarchy (better tree)
 brew 'nmap'             # Network mapper, for scanning local network and finding devices
 brew 'yt-dlp'           # YouTube downloader
 brew 'streamrip'        # Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer
@@ -29,6 +31,24 @@ brew "dockutil"         # Command-line utility for managing macOS Dock items and
 brew 'bash-completion' # Programmable completion for Bash
 brew 'zsh-autosuggestions' # Fish-like autosuggestions for Zsh
 brew 'zsh-completions'  # Additional completion definitions for Zsh
+brew 'atuin'            # Improved shell history for zsh, bash, fish and nushell
+brew 'tlrc'             # Simplified and community-driven man pages (Official tldr client written in Rust)
+brew 'eza'              # Modern replacement for 'ls'
+brew 'duf'              # Disk Usage/Free Utility - a better 'df' alternative
+brew 'aria2'            # Download Utility (better wget)
+brew 'diff-so-fancy'    # File Comparisons (better diff)
+brew 'procs'            # Process Viewer (better ps)
+brew 'rsync'            # File Synchronization Tool
+brew 'bandwhich'        # Terminal bandwidth utilization monitor
+brew 'gping'            # Ping Utility (better ping but with graph)
+brew 'dua-cli'          # Disk Usage Analyzer (better du)
+brew 'speedtest-cli'    # Command-line interface for testing internet bandwidth using Speedtest.net
+brew 'dog'              # DNS lookup utility (better dig)
+brew 'cmus'             # Terminal-based music player
+brew 'ddgr'             # DuckDuckGo search from the command line
+brew 'micro'            # Code editor (better nano)
+brew 'lazydocker'       # Full Docker management app in the terminal
+brew 'navi'             # Interactive cheatsheets for the command-line
 
 cask "alt-tab"          # Window switcher for macOS, similar to the Alt-Tab functionality in Windows
 cask "betterdisplay"    # Tool for managing external displays on macOS, providing features like display mirroring and resolution management
@@ -58,40 +78,31 @@ mas "Shazam", id: 897118787
 mas "TestFlight", id: 899247664
 # mas "Xcode", id: 497799835
 
-vscode "4ops.terraform"                         # Terraform language support, including syntax highlighting, code completion, and linting
-vscode "aaron-bond.better-comments"             # Improving code readability by adding color-coded comments
-vscode "alexcvzz.vscode-sqlite"                 # 
-vscode "eamodio.gitlens"
-vscode "ecmel.vscode-html-css"
-vscode "esbenp.prettier-vscode"
-vscode "github.copilot-chat"
-vscode "hashicorp.terraform"
-vscode "mechatroner.rainbow-csv"
-vscode "ms-azuretools.vscode-containers"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-python.vscode-python-envs"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.remote-explorer"
-vscode "mtxr.sqltools"
-vscode "mtxr.sqltools-driver-sqlite"
-vscode "openai.chatgpt"
-vscode "pkief.material-icon-theme"
-vscode "pranaygp.vscode-css-peek"
-vscode "redhat.java"
-vscode "redhat.vscode-yaml"
-vscode "ritwickdey.liveserver"
-vscode "tamasfe.even-better-toml"
-vscode "vscjava.migrate-java-to-azure"
-vscode "vscjava.vscode-gradle"
-vscode "vscjava.vscode-java-debug"
-vscode "vscjava.vscode-java-dependency"
-vscode "vscjava.vscode-java-pack"
-vscode "vscjava.vscode-java-test"
-vscode "vscjava.vscode-java-upgrade"
-vscode "vscjava.vscode-maven"
-vscode "webossdk.webosstudio"
-vscode "zhuangtongfa.material-theme"
-vscode "zignd.html-css-class-completion"
+vscode "4ops.terraform"                         # Terraform language support
+vscode "aaron-bond.better-comments"             # Color-coded comments
+vscode "alexcvzz.vscode-sqlite"                 # SQLite database viewer
+vscode "eamodio.gitlens"                        # Git history and blame info
+vscode "ecmel.vscode-html-css"                  # CSS autocomplete in HTML
+vscode "esbenp.prettier-vscode"                 # Code formatter
+vscode "github.copilot-chat"                    # AI coding assistant (chat)
+vscode "hashicorp.terraform"                    # Official Terraform support
+vscode "mechatroner.rainbow-csv"                # Colorized CSV columns
+vscode "ms-azuretools.vscode-containers"        # Docker & dev containers
+vscode "ms-python.debugpy"                      # Python debugger
+vscode "ms-python.python"                       # Core Python support
+vscode "ms-python.vscode-pylance"               # Python IntelliSense
+vscode "ms-python.vscode-python-envs"           # Python environment manager
+vscode "ms-vscode-remote.remote-ssh"            # Remote development via SSH
+vscode "ms-vscode-remote.remote-ssh-edit"       # Edit SSH config
+vscode "ms-vscode.remote-explorer"              # Remote connections UI
+vscode "mtxr.sqltools"                          # SQL client
+vscode "mtxr.sqltools-driver-sqlite"            # SQLite driver for SQLTools
+vscode "openai.chatgpt"                         # ChatGPT in VS Code
+vscode "pkief.material-icon-theme"              # File icons
+vscode "pranaygp.vscode-css-peek"               # Jump to CSS definitions
+vscode "redhat.java"                            # Java language support
+vscode "redhat.vscode-yaml"                     # YAML support & validation
+vscode "ritwickdey.liveserver"                  # Live local web server
+vscode "tamasfe.even-better-toml"               # TOML language support
+vscode "zhuangtongfa.material-theme"            # Material UI theme
+vscode "zignd.html-css-class-completion"        # HTML/CSS class autocomplete
