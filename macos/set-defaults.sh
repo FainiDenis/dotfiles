@@ -22,6 +22,36 @@ defaults write com.apple.dock autohide-time-modifier -float 2.0
 # Do not show recent apps
 defaults write com.apple.dock show-recents -bool false
 
+# Configure Dock apps via dockutil
+if command -v dockutil >/dev/null 2>&1; then
+  # Remove default apps from Dock
+  dockutil --remove 'Mail' --no-restart
+  dockutil --remove 'Messages' --no-restart
+  dockutil --remove 'Photos' --no-restart
+  dockutil --remove 'FaceTime' --no-restart
+  dockutil --remove 'Music' --no-restart
+  dockutil --remove 'Podcasts' --no-restart
+  dockutil --remove 'TV' --no-restart
+  dockutil --remove 'Safari' --no-restart
+  dockutil --remove 'Calendar' --no-restart
+  dockutil --remove 'Contacts' --no-restart
+  dockutil --remove 'Reminders' --no-restart
+  dockutil --remove 'Notes' --no-restart
+  dockutil --remove 'App Store' --no-restart
+  dockutil --remove 'System Settings' --no-restart
+  dockutil --remove 'Maps' --no-restart
+  dockutil --remove 'Games' --no-restart
+
+  # Add preferred apps to Dock
+  dockutil --add '/Applications/Firefox.app' --no-restart
+  dockutil --add '/Applications/Terminal.app' --no-restart
+  dockutil --add '/Applications/Termius.app' --no-restart
+  dockutil --add '/Applications/Windows App.app' --no-restart
+  dockutil --add '/Applications/Visual Studio Code.app' --no-restart
+  dockutil --add '/Applications/VLC.app' --no-restart
+  dockutil --add '/Applications/Stremio.app' --no-restart
+fi
+
 # Bottom-left hot corner → screensaver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
