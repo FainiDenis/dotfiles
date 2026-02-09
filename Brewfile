@@ -26,6 +26,9 @@ brew "node"             # JavaScript runtime built on Chrome's V8 JavaScript eng
 brew "pkgconf"          # Helper tool used when compiling applications and libraries
 brew "uv"               # Fast and minimalistic JavaScript/TypeScript runtime built on V8, with a focus on performance and security
 brew "dockutil"         # Command-line utility for managing macOS Dock items and settings
+brew install 'bash-completion' # Programmable completion for Bash
+brew 'zsh-autosuggestions' # Fish-like autosuggestions for Zsh
+brew 'zsh-completions'  # Additional completion definitions for Zsh
 
 cask "alt-tab"          # Window switcher for macOS, similar to the Alt-Tab functionality in Windows
 cask "betterdisplay"    # Tool for managing external displays on macOS, providing features like display mirroring and resolution management
