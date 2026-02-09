@@ -21,3 +21,12 @@ alias tracer='traceroute'
 alias ns='nslookup'
 
 diga() { dig +short A "$1"; }   # Get the A record for a domain
+
+# List all aliases in a sorted manner
+aliases() {
+  if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: aliases [-h|--help]"
+    echo "Display all currently available aliases."
+  fi
+  alias | sort
+}
