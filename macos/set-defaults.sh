@@ -41,10 +41,11 @@ if command -v dockutil >/dev/null 2>&1; then
   dockutil --remove 'System Settings' --no-restart
   dockutil --remove 'Maps' --no-restart
   dockutil --remove 'Games' --no-restart
+  dockutil --remove 'Phone' --no-restart
 
   # Add preferred apps to Dock
   dockutil --add '/Applications/Firefox.app' --no-restart
-  dockutil --add '/Applications/Terminal.app' --no-restart
+  dockutil --add '/Applications/Utilities/Terminal.app' --no-restart
   dockutil --add '/Applications/Termius.app' --no-restart
   dockutil --add '/Applications/Windows App.app' --no-restart
   dockutil --add '/Applications/Visual Studio Code.app' --no-restart
