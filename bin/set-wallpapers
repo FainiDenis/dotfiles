@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#
+# Download and apply desktop + login screen wallpapers on macOS.
+
+set -euo pipefail
+
+WALLPAPER_DIR="${HOME}/Documents/wallpaper"
+LOGIN_URL="https://wallpapercave.com/wp/wp15570742.jpg" # <== Change this URL to set a different login screen wallpaper
+DESKTOP_URL="https://wallpapercave.com/wp/wp15570728.jpg" # <== Change this URL to set a different desktop wallpaper
+LOGIN_FILE="${WALLPAPER_DIR}/login_screen_wallpaper.jpg"
+DESKTOP_FILE="${WALLPAPER_DIR}/desktop_wallpaper.jpg"
+UA="Mozilla/5.0"
+REFERRER="https://wallpapercave.com/"
+
+download_file() {
+  local url="$1"
+  local out="$2"
+
+  if command -v curl >/dev/null 2>&1; then
+    curl -fL -A "${UA}" -e "${REFERRER}" "${url}" -o "${out}"
+    return
+  fi
+
+  if command -v wget >/dev/null 2>&1; then
+    wget --user-agent="${UA}" --referer="${REFERRER}" -O "${out}" "${url}" 
+    return
+  fi
+
+  echo "Error: neither curl nor wget is installed." >&2
+  exit 1
+}
+
+mkdir -p "${WALLPAPER_DIR}"
+
+echo "Downloading login wallpaper..."
+download_file "${LOGIN_URL}" "${LOGIN_FILE}"
+echo "Downloading desktop wallpaper..."
+download_file "${DESKTOP_URL}" "${DESKTOP_FILE}"
+
+echo "Setting desktop wallpaper..."
+osascript \
+  -e "set p to POSIX file \"${DESKTOP_FILE}\" as alias" \
+  -e "tell application \"Finder\" to set desktop picture to p"
+
+echo "Setting login screen wallpaper (admin prompt expected)..."
+osascript \
+  -e "do shell script \"defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture \\\"${LOGIN_FILE}\\\"\" with administrator privileges"
+
+echo "Done."
+echo "Desktop: ${DESKTOP_FILE}"
+echo "Login:   ${LOGIN_FILE}"
