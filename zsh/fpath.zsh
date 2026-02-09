@@ -2,5 +2,5 @@
 for topic_folder ($ZSH/*) if [ -d $topic_folder ]; then  fpath=($topic_folder $fpath); fi;
 
 if command -v brew >/dev/null 2>&1; then
-  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+  fpath=("$(command brew --prefix)/share/zsh/site-functions" $fpath)
 fi
