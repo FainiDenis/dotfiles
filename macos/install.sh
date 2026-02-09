@@ -15,17 +15,12 @@ if [[ -x "$HOME/.dotfiles/macos/configure-smb.sh" ]]; then
 fi
 
 AGENT_ID="com.dotfiles.smb-autoconnect"
-LEGACY_AGENT_ID="com.fainidenis.smb-autoconnect"
 SOURCE_PLIST="$HOME/.dotfiles/macos/launchagents/${AGENT_ID}.plist"
 TARGET_DIR="$HOME/Library/LaunchAgents"
 TARGET_PLIST="$TARGET_DIR/${AGENT_ID}.plist"
-LEGACY_PLIST="$TARGET_DIR/${LEGACY_AGENT_ID}.plist"
 
 mkdir -p "$TARGET_DIR"
 cp "$SOURCE_PLIST" "$TARGET_PLIST"
-
-launchctl bootout "gui/$(id -u)/$LEGACY_AGENT_ID" >/dev/null 2>&1 || true
-rm -f "$LEGACY_PLIST"
 
 launchctl bootout "gui/$(id -u)/$AGENT_ID" >/dev/null 2>&1 || true
 launchctl bootstrap "gui/$(id -u)" "$TARGET_PLIST"
