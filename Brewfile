@@ -1,11 +1,10 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/bundle'
-tap "filosottile/musl-cross"
-tap "lihaoyun6/tap"
-tap "nohajc/anylinuxfs"
-tap "slp/krun"
-tap "thusvill/livewallpaper"
+tap "filosottile/musl-cross"   # Great for building static Linux binaries on macOS
+# tap "lihaoyun6/tap"            # Custom formulas (misc dev tools)  <== Uncomment if you actively use
+# tap "nohajc/anylinuxfs"        # Useful for containers, VMs, and Linux experiments  <== Uncomment if you actively use
+# tap "slp/krun"                 # Lightweight VM runtime (often paired with containers)  == Uncomment if you actively use
+tap "thusvill/livewallpaper"   # Live wallpapers for macOS
 
 brew 'bat'              # A cat(1) clone with syntax highlighting and Git integration
 brew 'coreutils'        # GNU core utilities (including `ls`, `cat`, etc.) with modern features and better performance
@@ -25,7 +24,7 @@ brew "imagemagick"      # Image manipulation tool with support for a wide range 
 brew "mas"              # Mac App Store command-line interface for installing and managing apps from the Mac App Store
 brew "python@3"         # Python programming language, version 3.x
 brew "node"             # JavaScript runtime built on Chrome's V8 JavaScript engine, for running JavaScript code outside of a browser
-brew "pkgconf"          # Helper tool used when compiling applications and libraries
+# brew "pkgconf"          # Helper tool used when compiling applications and libraries
 brew "uv"               # Fast and minimalistic JavaScript/TypeScript runtime built on V8, with a focus on performance and security
 brew "dockutil"         # Command-line utility for managing macOS Dock items and settings
 brew 'bash-completion' # Programmable completion for Bash
@@ -43,12 +42,14 @@ brew 'bandwhich'        # Terminal bandwidth utilization monitor
 brew 'gping'            # Ping Utility (better ping but with graph)
 brew 'dua-cli'          # Disk Usage Analyzer (better du)
 brew 'speedtest-cli'    # Command-line interface for testing internet bandwidth using Speedtest.net
-brew 'dog'              # DNS lookup utility (better dig)
+brew 'doge'              # DNS lookup utility (better dig)
 brew 'cmus'             # Terminal-based music player
 brew 'ddgr'             # DuckDuckGo search from the command line
 brew 'micro'            # Code editor (better nano)
 brew 'lazydocker'       # Full Docker management app in the terminal
 brew 'navi'             # Interactive cheatsheets for the command-line
+brew 'zoxide'           # Smarter cd command that learns your habits and suggests the most likely destination
+brew 'lazyssh'          # Interactive SSH connection manager in the terminal
 
 cask "alt-tab"          # Window switcher for macOS, similar to the Alt-Tab functionality in Windows
 cask "betterdisplay"    # Tool for managing external displays on macOS, providing features like display mirroring and resolution management
