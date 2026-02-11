@@ -72,6 +72,7 @@ cask "vlc"              # Open-source multimedia player that supports a wide ran
 cask "windows-app"      # Windows app for macOS, allowing users to run Windows applications on their Mac using virtualization technology
 cask "zoom"             # Video conferencing and online meeting platform, allowing users to host and join virtual meetings, webinars, and video calls
 cask 'zed'              # Code editor for developers, with a focus on speed and performance, and support for multiple programming languages
+cask 'orbstack'         # Fast, light powerful way to run containers and linux VMs on macOS
 
 mas "Amperfy", id: 1530145038
 mas "Apple Configurator", id: 1037126344
