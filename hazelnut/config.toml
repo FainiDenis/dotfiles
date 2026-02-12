@@ -1,0 +1,238 @@
+[general]
+log_level = "info"
+log_file = "/Users/fainidenis/.config/hazelnut/hazelnut.log"
+debounce_seconds = 2
+polling_interval_secs = 5
+log_retention = 1000
+start_daemon_on_launch = false
+notifications_enabled = true
+theme = "cyberpunk"
+
+[[watch]]
+path = "/Users/fainidenis/Downloads"
+recursive = false
+rules = []
+
+[[watch]]
+path = "/Users/fainidenis/Desktop"
+recursive = false
+rules = []
+
+[[rule]]
+name = "Downloads: Documents"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "pdf",
+    "docx",
+    "xlsx",
+    "pptx",
+    "txt",
+    "odt",
+    "ods",
+    "odp",
+    "rtf",
+    "md",
+    "tex",
+    "csv",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Documents"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Images"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "bmp",
+    "webp",
+    "heic",
+    "tiff",
+    "svg",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Images"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Videos"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "mp4",
+    "mkv",
+    "avi",
+    "mov",
+    "webm",
+    "m4v",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Videos"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Audio"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "mp3",
+    "wav",
+    "flac",
+    "m4a",
+    "aac",
+    "ogg",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Audio"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Software Archives"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "dmg",
+    "exe",
+    "msi",
+    "pkg",
+    "deb",
+    "rpm",
+    "iso",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Software"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Archives"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "zip",
+    "tar",
+    "gz",
+    "rar",
+    "7z",
+    "bz2",
+    "xz",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Archives"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Downloads: Code Files"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "json",
+    "yaml",
+    "yml",
+    "toml",
+    "xml",
+    "sql",
+    "sh",
+    "zsh",
+    "bash",
+    "py",
+    "js",
+    "ts",
+    "jsx",
+    "tsx",
+    "go",
+    "rs",
+    "java",
+    "c",
+    "cpp",
+    "h",
+    "hpp",
+]
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Downloads/Code"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Applications: .app Bundles"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extension = "app"
+extensions = []
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Applications"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Desktop: Screenshots"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = []
+name_matches = "Screenshot*.png"
+
+[rule.action]
+type = "move"
+destination = "/Users/fainidenis/Pictures/Screenshots"
+create_destination = true
+overwrite = false
+
+[[rule]]
+name = "Cleanup: Old Temporary Files"
+enabled = true
+stop_processing = false
+
+[rule.condition]
+extensions = [
+    "tmp",
+    "log",
+    "bak",
+]
+age_days_greater_than = 30
+
+[rule.action]
+type = "trash"
