@@ -5,6 +5,7 @@ tap "filosottile/musl-cross"   # Great for building static Linux binaries on mac
 # tap "nohajc/anylinuxfs"        # Useful for containers, VMs, and Linux experiments  <== Uncomment if you actively use
 # tap "slp/krun"                 # Lightweight VM runtime (often paired with containers)  == Uncomment if you actively use
 tap "thusvill/livewallpaper"   # Live wallpapers for macOS
+tap "ricardodantas/tap"        # Hazelnut 
 
 brew 'bat'              # A cat(1) clone with syntax highlighting and Git integration
 brew 'coreutils'        # GNU core utilities (including `ls`, `cat`, etc.) with modern features and better performance
@@ -50,6 +51,8 @@ brew 'lazydocker'       # Full Docker management app in the terminal
 brew 'navi'             # Interactive cheatsheets for the command-line
 brew 'zoxide'           # Smarter cd command that learns your habits and suggests the most likely destination
 brew 'lazyssh'          # Interactive SSH connection manager in the terminal
+brew 'hazelnut'         # Hazel alternative to organize files with rules and actions.
+brew 'fd'               # Find files and directories (better find)
 
 cask "alt-tab"          # Window switcher for macOS, similar to the Alt-Tab functionality in Windows
 cask "betterdisplay"    # Tool for managing external displays on macOS, providing features like display mirroring and resolution management
@@ -73,6 +76,10 @@ cask "windows-app"      # Windows app for macOS, allowing users to run Windows a
 cask "zoom"             # Video conferencing and online meeting platform, allowing users to host and join virtual meetings, webinars, and video calls
 cask 'zed'              # Code editor for developers, with a focus on speed and performance, and support for multiple programming languages
 cask 'orbstack'         # Fast, light powerful way to run containers and linux VMs on macOS
+cask 'finetune'         # Per-application volume mixer, equalizer, and audio router
+cask 'bitwarden'        # Desktop password and login vault manager
+# cask 'duplicati'        # Store securely encrypted backups in the cloud
+# cask 'mountain-duck'    # Mounts servers and cloud storages as a disk on the desktop
 
 mas "Amperfy", id: 1530145038
 mas "Apple Configurator", id: 1037126344
